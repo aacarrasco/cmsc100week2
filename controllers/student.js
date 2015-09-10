@@ -1,6 +1,7 @@
 var db = require(__dirname+'/../lib/mysql');
 
 exports.find = function(req, res, next){
+	console.log(req.ip+"find()"); //adds to logs, ip address that requested
 	db.query("SELECT * FROM student",	//query from a database, (SQL statement, error handling)
 		function(err, rows){
 			if(err) return next(err);
@@ -9,6 +10,7 @@ exports.find = function(req, res, next){
 };
 
 exports.findOne = function(req, res, next){
+	console.log(req.ip+"findOne()");
 	db.query("SELECT * FROM student WHERE id=?",[req.params.id], //(SQL statement, value of the ?,error handling)
 		function(err, rows){
 			if(err) return next(err);
