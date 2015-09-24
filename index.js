@@ -5,6 +5,7 @@ var app = express(); //instance of express
 app.use(require('body-parser')()); //needed for input or payload, asks for input and stores in repbody
 app.use(require('method-override')()); //needed for put and delete http request method, mimics put and delete methods using post
 app.use(require(__dirname+'/config/router')(express.Router())); //concatenate to /config/router
+app.use(express.static(__dirname+'/public')); //to redirect  to index.html
 
 /*
 //put them in separate modules

@@ -1,0 +1,24 @@
+<!DOCTYPE html> <!--very first line-->
+<html>	<!--root element, everything here should conform to the doctype-->
+	<head>	<!--information about the html document-->
+		<title>CMSC100 HTML</title>	<!--heavy title, description, used for searching-->
+		<meta charset="utf-8"/>	<!--not required, to define the character encoding of the html document-->
+	</head>
+	<body>
+		<!--Create a form for Creating Student-->
+		<form method="POST" action="http://localhost:5000/students">
+			<input type="text" name="name" placeholder="Name" required=""/> <br />
+			<input type="text" name="studno" placeholder="Student Number" pattern="^[0-9]{4}-[0-9]{5}$" title="YYYY-DDDDD" required=""/> <br />
+		<!--<input type="email" placeholder="Email" disabled="" /> <br />
+			<input type="url" placeholder="URL"/> <br />
+			<input type="color"/> <br />
+			<input type="date" placeholder="Date"/> <br />
+			<input type="range"/> <br />
+			<input type="number" placeholder="Number"/> <br />
+			<input type="time" placeholder="Time"/> <br />-->
+
+			<input type="submit" value="Create" /> <br />
+		</form>
+	</body>
+
+</html>
